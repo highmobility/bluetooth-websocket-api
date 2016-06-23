@@ -1,0 +1,17 @@
+{
+  "name": "Bluetooth-Websocket-API",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "browserify --entry app/app.js -t babelify --outfile dist/app.js -d --s app",
+    "watch:js": "watchify --entry app/app.js -t babelify --outfile dist/app.js -d --s app -v"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "connect": "^3.4.1",
+    "morgan": "^1.7.0",
+    "phoenix-js": "^1.0.3",
+    "serve-static": "^1.10.2",
+    "watchify": "^3.7.0"
+  }
+}
