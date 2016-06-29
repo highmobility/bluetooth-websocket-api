@@ -25,11 +25,13 @@
 - core
 
   It has operation methods of BLE device.
+  
   `device` object has service/characteristic objects as a properties to handle it.
 
 - adapter
 
   It connects browser with server by using WebSocket.
+  
   There are some send/receive event to handle data flow.
 
 - app
@@ -55,7 +57,7 @@ For more detail of each socket event　→　soon
 Now you can visit [`localhost:3000`](https://localhost:3000/app/) with SSL from your browser.
 
 ### To build js file when you update
-  1. Update source file of `app/app/js'
+  1. Update source file of `app/app/js`
   2. Run build with `npm run build`
   3. The file will be created to `dist/app.js`
 
@@ -63,6 +65,7 @@ Now you can visit [`localhost:3000`](https://localhost:3000/app/) with SSL from 
   `node server.js`
 
 Now you can visit [`localhost:3000/app`](https://localhost:3000/app) from your browser.
+
 Of course you can use your apache server.
 
 ## Caution
@@ -77,4 +80,5 @@ Of course you can use your apache server.
 ## Author
 
 [HIGH MOBILITY](http://www.high-mobility.com/)
+
 [Recruit Technologies](http://atl.recruit-tech.co.jp/en/) ([@tkybpp](https://github.com/tkybpp))
