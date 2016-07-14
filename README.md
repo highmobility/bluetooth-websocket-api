@@ -41,7 +41,9 @@
 Following socket messages is provided.
  ![socket_message](socket_messages.png)
 
-For more detail of each socket event　→　soon
+For more detail of each socket event.
+
+[Wiki - Socket messages specification](https://github.com/highmobility/bluetooth-websocket-api/wiki/Socket-messages-specification)
 
 ## Install
 
