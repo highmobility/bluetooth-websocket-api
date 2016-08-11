@@ -1,6 +1,7 @@
 #BluetoothWebsocketAPI
 
 ## Description
+ - This is WebBluetoothAPI and WebSocket based library
  - Operate BLE devices from web browser and connect with server
  - Serve will be able to some command to operate BLE device
 
