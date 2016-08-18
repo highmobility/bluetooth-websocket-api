@@ -1,52 +1,38 @@
-#BluetoothWebsocketAPI
+# Bluetooth Websocket API
 
-## Description
- - This is WebBluetoothAPI and WebSocket based library
- - Operate BLE devices from web browser and connect with server
- - Serve will be able to some command to operate BLE device
+The Bluetooth WebSocket API is an abstraction layer on top of the [Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth) JavaScript API. The Web Bluetooth API allows websites to connect and interact with Bluetooth Low Energy devices. The library does not introduces a new API but extends the JavaScript functions as WebSocket messages. This can be handy when you want to write Bluetooth enabled webapps and already have an implementation on the server.
 
-## Requirement
+As the Bluetooth operations are dictated by the server, the front-end setup is straight forward. The Bluetooth search command, connect and communication are all initiated by the server side.
 
-### For develop
+There are many different protocols on top of the WebSocket standard. The library has been designed while having this in mind, hence there is a separation between the library core and WebSocket adapter. Today [Phoenix framework](http://phoenixframework.org) WebSocket channels are supported.
 
-#### - Frontend
-- Node.js v5.4.0
+## Requirements
 
-#### - Backend
-- Elixir / phoenix
-
-### For testing application
-- Android6.0+   or Chromebook
+- Android6.0+, Chrome OS or OS X. The full list of supported hardware is all the time updated by the Web Bluetooth workgroup
 - Chrome v50+
-- https only
+- HTTPS due to WebBluetooth security requirements
 
 ## Features/Usage
   This library consists of three parts:
 
-- core
+- Core
 
-  It has operation methods of BLE device.
-  
-  `device` object has service/characteristic objects as a properties to handle it.
+  Handles the Web Bluetooth API and maps functions to the WebSocket adapter.
 
-- adapter
+- Adapter
 
-  It connects browser with server by using WebSocket.
-  
-  There are some send/receive event to handle data flow.
+  WebSocket specific implementation, formats and sends the messages back/forth between Core and the server.
 
-- app
+- App
 
-  It depends on what you want, you can update as you like.
+  An example app of usage is included in the repo, this can be used together with the Phoenix server reference app [Bluetooth WebSocket Server](https://github.com/highmobility/bluetooth-websocket-server).
 
-Following socket messages is provided.
- ![socket_message](socket_messages.png)
+Below is a simplified chart showing the different Bluetooth messages passed through the library.
+![socket_message](socket_messages.png)
 
-For more detail of each socket event.
+For more detail of each socket event please see the Wiki page [Wiki - Socket messages specification](https://github.com/highmobility/bluetooth-websocket-api/wiki/Socket-messages-specification).
 
-[Wiki - Socket messages specification](https://github.com/highmobility/bluetooth-websocket-api/wiki/Socket-messages-specification)
-
-## Install
+## Installation of reference app
 
 ### To start your app
   Install node_module with `npm install`
@@ -73,7 +59,7 @@ Of course you can use your apache server.
 
 ## Caution
 - The value should be encoded with `base64` when you read/write value.
-- `RequestDevice()` method should be fired by click event (due to WebBluetoothAPI specification).
+- `Adapter#requestDevice()` method should be fired by click event (due to WebBluetoothAPI specification).
 - `characteristicvaluechanged` event is fired by after not only its value changes but also a value change notification/indication (due to WebBluetoothAPI specification).
 
 ## Licence
