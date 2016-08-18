@@ -21,8 +21,7 @@ export default class App {
     // Pass endPoint or Socket Object to Adapter
     // You can also use like this
     // this.adapter = new BTWSPhoenixAdapter('wss://192.168.233.157:4443/socket');
-    this.adapter = new BTWSPhoenixAdapter(this.sampleSocket);
-    this.device = this.adapter.device;
+    this.adapter = new BTWSPhoenixAdapter(this.sampleSocket, 'ble:api');
 
     this.adapter.on('connected', _ => document.querySelector('#state').classList.add('connected'));
     this.adapter.on('disconnected', _ => document.querySelector('#state').classList.remove('connected'));
@@ -31,7 +30,7 @@ export default class App {
 
   showApproval(data){
     document.querySelector('#approval').innerHTML = `<div>${data.services}(${data.name})</div>`;
-    document.querySelector('#connect').addEventListener('click', _ => this.device.requestDevice(data));
+    document.querySelector('#connect').addEventListener('click', _ => this.adapter.requestDevice(data));
   }
 
 }
