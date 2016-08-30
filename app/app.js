@@ -26,6 +26,7 @@ export default class App {
     this.adapter.on('connected', _ => document.querySelector('#state').classList.add('connected'));
     this.adapter.on('disconnected', _ => document.querySelector('#state').classList.remove('connected'));
     this.adapter.on('user_approval', data => this.showApproval(data));
+    this.adapter.on('error', error => alert(error));
   }
 
   showApproval(data){
