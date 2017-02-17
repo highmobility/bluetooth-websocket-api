@@ -1,6 +1,32 @@
 {
   "name": "Bluetooth-Websocket-API",
-  "version": "0.0.0",
+  "description": "Bluetooth Websocket API - a JavaScript library that provides a simple WebSocket API to find, connect and interact with Bluetooth devices.",
+  "homepage": "https://www.high-mobility.com/",
+  "version": "0.0.1",
+  "author": {
+    "name": "High-Mobility GmbH.",
+    "email": "code@high-mobility.com"
+  },
+  "keywords": [
+    "Bluetooth", "WebBluetooth", "WebSocket"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/highmobility/bluetooth-websocket-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/highmobility/bluetooth-websocket-api/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/highmobility/bluetooth-websocket-api/blob/master/LICENCE"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 5.4.0"
+  },
   "scripts": {
     "build": "browserify --entry app/app.js -t babelify --outfile dist/app.js -d --s app",
     "watch:js": "watchify --entry app/app.js -t babelify --outfile dist/app.js -d --s app -v"
