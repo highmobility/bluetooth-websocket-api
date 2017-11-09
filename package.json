@@ -8,7 +8,12 @@
     "email": "code@high-mobility.com"
   },
   "keywords": [
-    "Bluetooth", "WebBluetooth", "web-bluetooth", "WebSocket", "ble", "IoT"
+    "Bluetooth",
+    "WebBluetooth",
+    "web-bluetooth",
+    "WebSocket",
+    "ble",
+    "IoT"
   ],
   "repository": {
     "type": "git",
